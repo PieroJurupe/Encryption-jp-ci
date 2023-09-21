@@ -13,13 +13,13 @@ import static com.encryption.encryptionjpci.Encriptacion.encrypt;
  */
 public class PruebCryp {
 
-    public static void main(String[] args) {
-        String key = "JoSeph  selatraga34 ";
-        String encryptedKey = encrypt(key);
-        String decryptedKey = decrypt(encryptedKey);
-
-        System.out.println("Original Key: " + key);
-        System.out.println("Encrypted Key: " + encryptedKey);
-        System.out.println("Decrypted Key: " + decryptedKey);
-    }
+//    public static void main(String[] args) {
+//        String key = "JoSeph  selatraga34 ";
+//        String encryptedKey = encrypt(key);
+//        String decryptedKey = decrypt(encryptedKey);
+//
+//        System.out.println("Original Key: " + key);
+//        System.out.println("Encrypted Key: " + encryptedKey);
+//        System.out.println("Decrypted Key: " + decryptedKey);
+//    }
 }

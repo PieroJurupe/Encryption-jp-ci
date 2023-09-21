@@ -4,6 +4,8 @@
 
 package com.encryption.encryptionjpci;
 
+import logic.Main;
+
 /**
  *
  * @author Usuario
@@ -11,6 +13,7 @@ package com.encryption.encryptionjpci;
 public class EncryptionJpCi {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Main mainClass = new Main();
+        mainClass.main();
     }
 }
