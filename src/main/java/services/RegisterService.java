@@ -1,11 +1,22 @@
 package services;
+import static com.encryption.encryptionjpci.Encriptacion.encrypt;
 import com.encryption.encryptionjpci.models.User;
+import persist.Persist;
+import userInterfaces.MainScreen;
 
 public class RegisterService {
     
-//    TODO: implement
-//    public boolean registerUser(user: User) {}
+    MainScreen mainScreen = new MainScreen();
+    
+    public boolean registerUser(User user) {
+        Persist persist = new Persist();
+        user.setPassword(generatePassword(user.getPassword()));
+        persist.addUser(user);
+        mainScreen.loadUsers();
+        return true;
+    }
 
-//    TODO: generate password    
-//    private generatePassword
+    private String generatePassword (String password) {
+        return encrypt(password);
+    }
 }

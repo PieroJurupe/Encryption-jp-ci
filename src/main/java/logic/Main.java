@@ -5,6 +5,7 @@
 package logic;
 
 import userInterfaces.LoginScreen;
+import userInterfaces.MainScreen;
 
 /**
  *
@@ -12,9 +13,8 @@ import userInterfaces.LoginScreen;
  */
 public class Main {
     public void main() {
-        LoginScreen loginScreen = new LoginScreen();
-        
-        loginScreen.setVisible(true);
-        loginScreen.setLocationRelativeTo(null);
+        MainScreen mainScreen = new MainScreen();
+        mainScreen.setVisible(true);
+        mainScreen.setLocationRelativeTo(null);
     }
 }
