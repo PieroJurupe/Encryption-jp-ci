@@ -5,8 +5,14 @@
 package userInterfaces;
 
 import com.encryption.encryptionjpci.models.User;
+import java.util.List;
+import java.util.ArrayList;
 import javax.swing.JFrame;
+import javax.swing.JTextField;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import services.RegisterService;
+
 
 /**
  *
@@ -14,12 +20,61 @@ import services.RegisterService;
  */
 public class RegisterScreen extends javax.swing.JFrame {
 
+    private  List<JTextField> textFields;
+    private String word = "";
+    private String wencrypt = "";
+    private String wdecrypt = "";
+
     /**
      * Creates new form RegisterScreen
      */
     public RegisterScreen() {
         initComponents();
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+        
+        textFields = new ArrayList<JTextField>();
+        textFields.add(txtUsername);
+        textFields.add(txtPassword);
+        textFields.add(txtName);
+        textFields.add(txtEmail);
+        textFields.add(txtLastname);
+
+        for (JTextField textField : textFields) {
+            textField.getDocument().addDocumentListener(new CustomDocumentListener());
+        }
+    }
+
+    private class CustomDocumentListener implements DocumentListener {
+
+        @Override
+        public void insertUpdate(DocumentEvent e) {
+            updateWord();
+        }
+
+        @Override
+        public void removeUpdate(DocumentEvent e) {
+            updateWord();
+        }
+
+        @Override
+        public void changedUpdate(DocumentEvent e) {
+            // No es necesario para campos de texto simples
+        }
+    }
+
+    private void updateWord() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (JTextField textField : textFields) {
+            
+            stringBuilder.append(textField.getText());
+        }
+        word = stringBuilder.toString();
+        wencrypt = com.encryption.encryptionjpci.Encriptacion.encrypt(word);
+        //System.out.println(wencrypt);
+        wdecrypt = com.encryption.encryptionjpci.Encriptacion.decrypt(wencrypt);
+        EncryptDecryptScreen encryptDecryptScreen = new EncryptDecryptScreen();
+        encryptDecryptScreen.setUserDetails(word,wencrypt,wdecrypt);
     }
 
     /**
@@ -222,13 +277,13 @@ public class RegisterScreen extends javax.swing.JFrame {
         String email = txtEmail.getText();
         String username = txtUsername.getText();
         String password = new String(txtPassword.getPassword());
-       
+
         user.setName(name);
         user.setLastName(lastName);
         user.setEmail(email);
         user.setUsername(username);
         user.setPassword(password);
-        
+
         RegisterService registerService = new RegisterService();
         registerService.registerUser(user);
         this.setVisible(false);
