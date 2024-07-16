@@ -20,7 +20,7 @@ This software project was built using a layered architecture.
 * MySQL(Optional)
 * Java
 
-# 🐳 How to run
+# 🛠 How to run
 * Use Java IDE such as IntelliJ or NetBeans to run the program if you want you can add a new MySql database to send encrypted users
 
 # 👷‍♀️ Contributors
