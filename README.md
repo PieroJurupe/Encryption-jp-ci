@@ -3,7 +3,7 @@
 > A simple keyboard encryption application created with Java technologies and simple mathematics to demonstrate the proper use and importance of encryption
 > Simple but effective interface to test the encryption and make changes as desired to also decrypt the data via key matrix
 # 🏛 Architecture
-This software project was built using a layered architecture.
+This software project was built using a MVC architecture.
 
 # 📦 Features
 * Home screen with brief explanation
