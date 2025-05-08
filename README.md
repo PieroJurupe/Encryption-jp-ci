@@ -24,10 +24,10 @@ Este proyecto de software se construyó utilizando una arquitectura MVC.
 * MySQL(Optional)
 * Java
 
-# 🛠 Como iniciar el proyecto
+# 🛠 Iniciar el proyecto
 * Utilice Java IDE como IntelliJ o NetBeans para ejecutar el programa; si lo desea, puede agregar una nueva base de datos MySql para enviar usuarios cifrados.
 
-# 👷‍♀️ Contributors
+# 👷‍♀️ Contribuidores
 * [Piero Jurupe](https://github.com/PieroJurupe)
 * [Joseph Carita](https://github.com/jcaritam)
     
